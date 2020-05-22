@@ -4,6 +4,8 @@ type: docker
 name: Default
 
 steps:
+  - name: generate-tags
+    image: quay.io/natlibfi/drone-gen-tags
 
   - name: docker 
     image: plugins/docker

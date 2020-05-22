@@ -1,0 +1,24 @@
+---          
+kind: pipeline
+type: docker
+name: Default
+
+steps:
+
+  - name: docker 
+    image: plugins/docker
+    settings:
+      repo: quay.io/natlibfi/cron
+      registry: quay.io
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+---
+kind: secret
+name: docker_username
+data: fbLYoPqus8zZaWYhPfNpIOHEOezDWOJ46DQVEsxeN/RW/xcW7qjzkM68IMfUQYGVUFgA/pa66/uT2g==
+---
+kind: secret
+name: docker_password
+data: MqMpDX+ZXO9gAjRQMO/VKQmI/r+qEYyu//iGQLRY+Lps3rv5wI2jU/Yn+vERPAlYoKV2JxxoEdSs/VgPeMnVamRv4FQ2lx7MV28ZBfO+QBJ52qHShVxfB+QWVpo=
